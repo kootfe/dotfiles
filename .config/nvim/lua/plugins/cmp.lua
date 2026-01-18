@@ -12,7 +12,6 @@ return {
     config = function()
         local cmp = require("cmp")
         local luasnip = require("luasnip")
-      
 
         cmp.setup({
             snippet = {
@@ -32,27 +31,6 @@ return {
                 { name = "buffer" },
                 { name = "luasnip" },
             }),
-            formatting = {
-                format = function(entry, vim_item)
-                    local item = entry:get_completion_item()
-
-                    -- Remove leading whitespace
-                    item.label = (item.label or ""):gsub("^%s+", "")
-
-                    -- Replace textEdit.newText if exists
-                    if item.textEdit and item.textEdit.newText then
-                        item.textEdit.newText = item.label
-                    end
-
-                    -- Also trim insertText leading whitespace
-                    if item.insertText then
-                        item.insertText = item.insertText:gsub("^%s+", "")
-                    end
-
-                    vim_item.abbr = item.label
-                    return vim_item
-                end,
-            },
         })
     end
 }
