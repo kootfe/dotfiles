@@ -2,11 +2,34 @@ return {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
     build = ":TSUpdate",
+    dependencies = {
+        "windwp/nvim-ts-autotag"
+    },
     config = function()
-        require'nvim-treesitter.configs'.setup {
-            ensure_installed = { "c", "cpp", "javascript", "typescript", "rust", "java", "python", "bash", "elixir", "eex", "heex" },
+        local treesitter = require("nvim-treesitter.config");
+        treesitter.setup({
+            ensure_installed = {
+                "c",
+                "cpp",
+                "javascript",
+                "typescript",
+                "rust",
+                "java",
+                "python",
+                "bash",
+                "elixir",
+                "eex",
+                "heex",
+                "vim",
+                "tera"
+            },
+
             highlight = { enable = true },
-        }
-    end 
+
+            autotag = {
+                enable = true
+            }
+        })
+    end
 }
 

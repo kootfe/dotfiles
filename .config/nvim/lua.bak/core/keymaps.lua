@@ -1,4 +1,4 @@
-local bltin = require("telescope.builtin")
+bltin = require("telescope.builtin")
 vim.keymap.set('n', '<C-f>', bltin.find_files, { noremap = true, silent = true })
 vim.keymap.set('n', '<C-d>', ':Telescope live_grep<cr>', { noremap = true, silent = true })
 

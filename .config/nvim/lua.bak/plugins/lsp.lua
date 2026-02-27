@@ -1,11 +1,10 @@
 return {
     "neovim/nvim-lspconfig",
-
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
     },
-
     config = function()
+        local lspconfig = require("lspconfig")
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
         -- Helper for root_dir
@@ -14,27 +13,26 @@ return {
         end
 
         -- Rust Analyzer
-        vim.lsp.config('rust_analyzer', {
+        lspconfig.rust_analyzer.setup({
             capabilities = capabilities,
             root_dir = get_root,
         })
 
         -- TypeScript / JavaScript
-        vim.lsp.config('ts_ls', { -- Thats the new version
+        lspconfig.ts_ls.setup({ -- Thats the new version
             filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
             capabilities = capabilities,
             root_dir = get_root,
         })
 
         -- Python
-        vim.lsp.config('pyright', {
+        lspconfig.pyright.setup({
             capabilities = capabilities,
             root_dir = get_root,
         })
 
         -- C / C++
-        vim.lsp.enable('clangd')
-        vim.lsp.config('clangd', {
+        lspconfig.clangd.setup({
             cmd = {
                 "clangd",
                 "--background-index",         -- index project in background
@@ -49,7 +47,7 @@ return {
         })
 
         -- ASM
-        vim.lsp.config('asm_lsp', {
+        lspconfig.asm_lsp.setup({
             cmd = { "asm-lsp" },
             filetypes = { "s", "S", "asm" },
             capabilities = capabilities,
@@ -57,45 +55,69 @@ return {
         })
 
         -- Markdown
-        vim.lsp.config('marksman', {
+        lspconfig.marksman.setup({
             filetypes = { "md", "markdown", "markdown.mdx" },
             capabilities = capabilities,
             root_dir = get_root,
         })
 
         -- JSON
-        vim.lsp.config('jsonls', {
+        lspconfig.jsonls.setup({
             capabilities = capabilities,
             root_dir = get_root,
         })
 
         -- YAML
-        vim.lsp.config('yamlls', {
+        lspconfig.yamlls.setup({
             capabilities = capabilities,
             root_dir = get_root,
         })
 
         -- Bash
-        vim.lsp.config('bashls', {
+        lspconfig.bashls.setup({
             capabilities = capabilities,
             root_dir = get_root,
         })
 
+        -- LaTeX
+        lspconfig.texlab.setup({
+            cmd = { "texlab" },
+            filetypes = { "tex", "plaintex" },
+            capabilities = capabilities,
+            root_dir = get_root,
+            settings = {
+                texlab = {
+                    build = {
+                        executable = "latexmk",
+                        args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+                        onSave = true,
+                        forwardSearchAfter = false,
+                    },
+                    forwardSearch = {
+                        executable = "zathura",
+                        args = { "--synctex-forward", "%l:1:%f", "%p" },
+                    },
+                    lint = {
+                        onChange = true,
+                    },
+                },
+            },
+        })
+
         -- HTML
-        vim.lsp.config('html', {
-            filetypes = {"html", "tera"},
+        lspconfig.html.setup({
             capabilities = capabilities,
             root_dir = get_root,
         })
 
         -- CSS
-        vim.lsp.config('cssls', {
+        lspconfig.cssls.setup({
             capabilities = capabilities,
             root_dir = get_root,
         })
 
         -- Lua (for Neovim config)
-        vim.lsp.config('lua_ls', {
+        lspconfig.lua_ls.setup({
             capabilities = capabilities,
             settings = {
                 Lua = {
@@ -117,9 +139,10 @@ return {
         })
 
         -- TOML
-        vim.lsp.config('taplo', {
+        lspconfig.taplo.setup({
             capabilities = capabilities,
             root_dir = get_root,
         })
     end
 }
+
