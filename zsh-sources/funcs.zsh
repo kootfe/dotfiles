@@ -16,6 +16,13 @@ paperctl() {
 
 }
 
+updgdf() {
+  cd ~/.dotfiles
+  git add .
+  git commit -m "update"
+  git push org main
+}
+
 zz() {
     sel=$(zoxide query --interactive)
     if [[ -z $sel ]]; then return 1; fi
