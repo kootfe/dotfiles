@@ -1,0 +1,9 @@
+* {
+    background:     #0b1a24ff;  /* bg0 */
+    background-alt: #003f55ff;  /* bg1 */
+    foreground:     #fff2d8ff;  /* fg */
+    selected:       #1fd1c7ff;  /* bg4 / mint highlight */
+    active:         #7dffb3ff;  /* green accent */
+    urgent:         #ff636eff;  /* red accent */
+}
+

@@ -1,0 +1,7 @@
+return {
+    name = "bashls",
+    cmd = { "bash-language-server", "start" },
+    filetypes = { "sh", "bash", "zsh" },
+    root_markers = { ".git", ".bashrc", ".zshrc" },
+    settings = {},
+}

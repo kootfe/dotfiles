@@ -1,0 +1,20 @@
+@define-color bg0 #0b1a24;   /* deep navy shadows */
+@define-color bg1 #003f55;   /* dark teal */
+@define-color bg2 #007c86;   /* mid teal */
+@define-color bg3 #00a0aa;   /* bright teal */
+@define-color bg4 #1fd1c7;   /* mint highlight */
+
+@define-color red    #ff636e; /* coral pink from background */
+@define-color orange #ff9a4d; /* warm orange cape tones */
+@define-color yellow #ffe66d; /* candy yellow accents */
+@define-color green  #7dffb3; /* neon mint */
+@define-color aqua   #42d6d6; /* cyan dots / glow */
+@define-color blue   #4aa3ff; /* soft electric blue */
+@define-color purple #c85cff; /* magenta/purple cape */
+
+@define-color fg #fff2d8;    /* creamy white (face / moon) */
+
+@define-color grey0 #3a4a57; /* muted navy grey */
+@define-color grey1 #6b8a94; /* dusty teal grey */
+@define-color grey2 #bfe6e0; /* pale mint grey */
+

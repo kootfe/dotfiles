@@ -1,0 +1,8 @@
+plugins=(git)
+
+# Oh My Zsh base
+# source $ZSH/oh-my-zsh.sh
+
+# Custom plugins
+source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
