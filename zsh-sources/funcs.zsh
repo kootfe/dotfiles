@@ -18,6 +18,7 @@ paperctl() {
 
 updgdf() {
   cd ~/.dotfiles
+  git diff --quiet && echo "No changes" && return
   git add .
   git commit -m "update"
   git push org main
