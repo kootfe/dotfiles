@@ -1,3 +1,4 @@
+# Change wallpaper and handle mpvpaper/awww automatically
 paperctl() {
     mimetype=$(file --mime-type -b "$1")
     case "$mimetype" in
@@ -16,6 +17,7 @@ paperctl() {
 
 }
 
+# Updated dotfiles on git
 updgdf() {
   cd ~/.dotfiles
   git diff --quiet && echo "No changes" && return
@@ -24,6 +26,7 @@ updgdf() {
   git push org main
 }
 
+# Zoxide <3
 zz() {
     sel=$(zoxide query --interactive)
     if [[ -z $sel ]]; then return 1; fi
@@ -31,15 +34,18 @@ zz() {
     cd $sel
 }
 
+# Why does linux dont have this built in be like
 mkcd() {
     mkdir -pv "$1"
     cd "$1"
 }
 
+# Math helper
 m() {
     echo "$@" | bc -l
 }
 
+# Backup a file
 bak() {
     [ -z "$1" ] && { echo "Usage: bak file"; return 1; }
     [ ! -f "$1" ] && { echo "File not found: $1"; return 1; }
@@ -49,6 +55,7 @@ bak() {
     cp "$1" "$1.bak"
 }
 
+# Swap places with backup
 swbak() {
     [ -z "$1" ] && { echo "Usage: swbak file"; return 1; }
     [ ! -e "$1" ] && { echo "File not found: $1"; return 1; }
@@ -70,13 +77,16 @@ swbak() {
     }
 }
 
+# Rerun as sude
 resd() { sudo $(fc -ln -1) }
 
+# Make executable
 cx () {
     chmod +x "$1"
 }
 
-extract() {
+# Extract a file
+ex() {
     case "$1" in
         *.tar.gz|*.tgz)     tar xzf "$1" ;;
         *.tar.bz2)          tar xjf "$1" ;;
@@ -87,6 +97,7 @@ extract() {
     esac
 }
 
+#... idk
 llls() {
 local -a patterns=()
     local -a exclude_files=()
@@ -139,7 +150,9 @@ local -a patterns=()
     done < <("${find_cmd[@]}")
 }
 
-# i have never used this... not once... still love it... its broken tho it doesnt show title likes descriopton etc... still love it
+
+#! i have never used this... not once... still love it... its broken tho it doesnt show title likes descriopton etc... still love it
+# Youtube but cli
 ytsearch() {
   local query="$1"
   local count="${2:-10}"
