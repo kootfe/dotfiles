@@ -3,6 +3,7 @@ export KZSH="$HOME/zsh-sources"
 
 if [[ $- == *i* ]]; then
     source /usr/share/nvm/init-nvm.sh
+    eval "$(keychain --eval --quiet ~/.ssh/id_badbob)"
     eval "$(keychain --eval --quiet ~/.ssh/github_ed25519)"
 fi
 

@@ -13,7 +13,8 @@ end
 vim.filetype.add({
     extension = {
         h = "c",
-        s = "asm"
+        s = "asm",
+        hxb = "hexbin",
     },
 })
 

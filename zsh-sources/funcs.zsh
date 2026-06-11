@@ -175,3 +175,22 @@ URL: %(webpage_url)s
   awk -F ' \\|-\\| ' '{print $4}' | \
   xargs -r -d '\n' mpv
 }
+
+upr() {
+  local updates filter
+
+  updates=$(sudo pacman -Qu)
+  filter=$(grep -Ei "linux|hyprland|libc" <<< "$updates")
+
+  sudo pacman -Syu
+
+  [[ -z "$filter" ]] && return
+
+  echo "Critical updates detected:"
+  echo "$filter"
+
+  read -q "ans?Reboot now? (y/n) "
+  echo
+
+  [[ $? -eq 0 ]] && reboot || echo "okay"
+}

@@ -11,6 +11,10 @@ return {
     filetypes = {
         "c",
         "h",
+        "hxx",
+        "cxx",
+        "hpp",
+        "cpp"
     },
 }
 

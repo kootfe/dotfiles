@@ -12,7 +12,9 @@ vim.lsp.enable({
     "texlab",
     "bashls",
     "asm-lsp",
-    "ada_ls"
+    "ada_ls",
+	"tinymist",
+    "hexbin-lsp"
 })
 
 vim.diagnostic.config({
