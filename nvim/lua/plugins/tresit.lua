@@ -26,7 +26,8 @@ return {
                 "haskell",
                 "commonlisp",
                 "zsh",
-                "latex"
+                "latex",
+                "wgsl"
             },
 
             highlight = { enable = true },

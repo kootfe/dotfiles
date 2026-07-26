@@ -14,7 +14,9 @@ vim.lsp.enable({
     "asm-lsp",
     "ada_ls",
 	"tinymist",
-    "hexbin-lsp"
+    "hexbin-lsp",
+	"wgsl-analyzer",
+    "roslyn_ls"
 })
 
 vim.diagnostic.config({

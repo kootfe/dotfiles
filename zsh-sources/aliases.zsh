@@ -91,3 +91,7 @@ alias mkc="make clean && -j$(nproc)"
 alias gdb="gdb -tui"
 # remove olphans
 alias rmophan='pacman -Qdtq | fzf -m --prompt="Remove orphan: " --marker="✔ " | xargs -r sudo pacman -Rns'
+# just reality
+alias gf='echo "Reletionship fault (you got dumped)"'
+# nsfw image fetcher
+alias nsfw='/home/koofte/projects/cat/ii.sh'

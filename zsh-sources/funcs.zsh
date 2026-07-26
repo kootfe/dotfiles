@@ -26,6 +26,11 @@ updgdf() {
   git push org main
 }
 
+furi() {
+  [ -z "$1" ] && return 1
+  printf 'file://%s\n' "$(realpath "$1")"
+}
+
 # Zoxide <3
 zz() {
     sel=$(zoxide query --interactive)
