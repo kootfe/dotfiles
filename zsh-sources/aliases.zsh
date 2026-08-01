@@ -15,10 +15,6 @@ alias _cat="command cat"
 alias pr="cd ~/projects"
 # Go to actove projects
 alias pa="cd ~/projects/__active__"
-# Go to dynarch project
-alias pad="cd ~/projects/dynarch"
-# Go to dynarch compiler project
-alias dcr="cd ~/projects/dynarch/dynarch-compiler-rs"
 # Open yazi
 alias y="yazi"
 # cd back
