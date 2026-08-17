@@ -32,6 +32,7 @@ require("lazy").setup({
     require("plugins.gitsigns"),
     require("plugins.jdtls"),
  --   require("plugins.waketime"),
+    require("plugins.fountain"),
     require("plugins.rpc"),
     require("plugins.typst"),
 })

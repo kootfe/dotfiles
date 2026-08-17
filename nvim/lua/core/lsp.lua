@@ -15,7 +15,11 @@ vim.lsp.enable({
     "ada_ls",
 	"tinymist",
     "hexbin-lsp",
-    "sqls"
+    "sqls",
+	"wgsl-analyzer",
+    "roslyn_ls",
+    "kotlin_lsp",
+    "arduino_ls",
 })
 
 vim.diagnostic.config({

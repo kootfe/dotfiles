@@ -4,7 +4,6 @@ export KZSH="$HOME/zsh-sources"
 if [[ $- == *i* ]]; then
  #   source /usr/share/nvm/init-nvm.sh
  #   eval "$(keychain --eval --quiet ~/.ssh/id_badbob)"
-    eval "$(keychain --eval --quiet ~/.ssh/id_github)"
 fi
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
