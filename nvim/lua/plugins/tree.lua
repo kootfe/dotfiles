@@ -12,7 +12,7 @@ return {
         enable_diagnostics = true,
         filesystem = {
             group_empty_dirs = true,
-        }
+        },
     },
 }
 

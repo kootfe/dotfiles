@@ -15,6 +15,7 @@ vim.lsp.enable({
     "ada_ls",
 	"tinymist",
     "hexbin-lsp",
+    "sqls",
 	"wgsl-analyzer",
     "roslyn_ls",
     "kotlin_lsp",
