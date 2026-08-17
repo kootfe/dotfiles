@@ -15,7 +15,7 @@ hl.monitor({
 local terminal = "kitty"
 local menu = "rofi"
 local bar = "waybar"
-local wall = "awww-daemon"
+local wall = "/home/koofte/.local/share/bin/paperctl apply"
 local natif = "swaync"
 
 hl.on("hyprland.start", function()

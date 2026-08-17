@@ -1,22 +1,3 @@
-# Change wallpaper and handle mpvpaper/awww automatically
-paperctl() {
-    mimetype=$(file --mime-type -b "$1")
-    case "$mimetype" in
-      image/*)
-        pkill mpvpaper
-        if [[ -z $(pgrep awww-daemon) ]]; then awww-daemon & disown; fi
-        awww img $1 --transition-type wave
-        ;;
-      video/*)
-        pkill awww
-        mpvpaper -o "loop=inf panscan=1.0" ALL "$1" & disown
-        ;;
-      *)
-        echo "File type $mimetype is not supported for $0"
-    esac
-
-}
-
 # Updated dotfiles on git
 updgdf() {
   cd ~/.dotfiles
