@@ -15,6 +15,8 @@ vim.filetype.add({
         h = "c",
         s = "asm",
         hxb = "hexbin",
+        wgsl = "wgsl",
+        mac = "pdp1",
     },
 })
 

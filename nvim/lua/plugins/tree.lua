@@ -10,6 +10,9 @@ return {
         popup_border_style = "rounded",
         enable_git_status = true,
         enable_diagnostics = true,
+        filesystem = {
+            group_empty_dirs = true,
+        }
     },
 }
 

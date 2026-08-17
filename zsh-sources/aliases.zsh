@@ -15,10 +15,6 @@ alias _cat="command cat"
 alias pr="cd ~/projects"
 # Go to actove projects
 alias pa="cd ~/projects/__active__"
-# Go to dynarch project
-alias pad="cd ~/projects/dynarch"
-# Go to dynarch compiler project
-alias dcr="cd ~/projects/dynarch/dynarch-compiler-rs"
 # Open yazi
 alias y="yazi"
 # cd back
@@ -91,3 +87,11 @@ alias mkc="make clean && -j$(nproc)"
 alias gdb="gdb -tui"
 # remove olphans
 alias rmophan='pacman -Qdtq | fzf -m --prompt="Remove orphan: " --marker="✔ " | xargs -r sudo pacman -Rns'
+# just reality
+alias gf='echo "Reletionship fault (you got dumped)"'
+# nsfw image fetcher
+alias nsfw='/home/koofte/projects/cat/ii.sh'
+# turn off the pc
+alias baibai="poweroff"
+# gradlew
+alias gradlew="./gradlew"
